@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { faker } = require("@faker-js/faker");
 // "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p       : to use MySQL in CLI run this commond in CLI.
 const mysql = require("mysql2");
@@ -17,7 +18,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     database: 'delta_app',
-    password: "REMOVED"
+    password: process.env.DB_PASSWORD
 });
 
 let getRandomUser = () => {
